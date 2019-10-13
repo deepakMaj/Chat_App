@@ -8,5 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+import "bootstrap"
+
 //= require jquery
-//= require semantic-ui
+//= require bootstrap-sprockets
