@@ -1,0 +1,26 @@
+<h2 align="center">Welcome to MessageMe-<i>ChatApp</i></h2>
+<%= form_for(@user, html: {role: "form"}, url: signup_path) do |f|%>
+  <label>
+    <p class="label-txt">ENTER YOUR EMAIL</p>
+    <%= f.text_field :email, class: "input"%>
+    <div class="line-box">
+      <div class="line"></div>
+    </div>
+  </label>
+  <label>
+    <p class="label-txt">ENTER YOUR USERNAME</p>
+    <%= f.text_field :username, class: "input"%>
+    <div class="line-box">
+      <div class="line"></div>
+    </div>
+  </label>
+  <label>
+    <p class="label-txt">ENTER YOUR PASSWORD</p>
+    <%= f.password_field :password, class: "input"%>
+    <div class="line-box">
+      <div class="line"></div>
+    </div>
+  </label>
+  <%= f.button "Submit"%>
+<% end %>
+<%= stylesheet_link_tag "signup" %>
