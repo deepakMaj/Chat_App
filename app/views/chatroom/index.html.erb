@@ -14,7 +14,7 @@
       </section>
     </div>
     <div class="panel-footer">
-      <%= form_for(@message, html: {role: "form", class: "form-horizontal"}, url: message_path, remote: true) do |f|%>
+      <%= form_for(@message, html: {role: "form", class: "form-horizontal", autocomplete: "off"}, id: "clear", url: message_path, remote: true) do |f|%>
       <div class="input-group">
           <%= f.text_field :body, placeholder: "Enter message...", class: "form-control"%>
         <span class="input-group-btn">

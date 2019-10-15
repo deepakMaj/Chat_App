@@ -1,27 +1,37 @@
 <h2 align="center">Welcome to MessageMe-<i>ChatApp</i></h2>
 <%= render 'errors', obj: @user %>
-<%= form_for(@user, html: {role: "form"}, url: signup_path) do |f|%>
-  <label>
-    <p class="label-txt">ENTER YOUR EMAIL</p>
-    <%= f.text_field :email, class: "input"%>
-    <div class="line-box">
-      <div class="line"></div>
+<div class="row">
+  <div class="col-xs-12">
+    <%= form_for(@user, :html => {class: "form-horizontal", role: "form", autocomplete: "off"}, url: signup_path) do |f| %>
+    <div class="form-group">
+      <div class="control-label col-sm-2">
+        <%= f.label :username %>
+      </div>
+      <div class="col-sm-8">
+        <%= f.text_field :username, class: "form-control", placeholder: "Enter username", autofocus: true %>
+      </div>
     </div>
-  </label>
-  <label>
-    <p class="label-txt">ENTER YOUR USERNAME</p>
-    <%= f.text_field :username, class: "input"%>
-    <div class="line-box">
-      <div class="line"></div>
+    <div class="form-group">
+      <div class="control-label col-sm-2">
+        <%= f.label :email %>
+      </div>
+      <div class="col-sm-8">
+        <%= f.email_field :email, class: "form-control", placeholder: "Enter email" %>
+      </div>
     </div>
-  </label>
-  <label>
-    <p class="label-txt">ENTER YOUR PASSWORD</p>
-    <%= f.password_field :password, class: "input"%>
-    <div class="line-box">
-      <div class="line"></div>
+    <div class="form-group">
+      <div class="control-label col-sm-2">
+        <%= f.label :password %>
+      </div>
+      <div class="col-sm-8">
+        <%= f.password_field :password, class: "form-control", placeholder: "Enter password" %>
+      </div>
     </div>
-  </label>
-  <%= f.button "Submit"%>
-<% end %>
-<%= stylesheet_link_tag "signup" %>
+    <div class="form-group">
+      <div class="col-sm-offset-5 col-sm-10">
+        <%= f.submit "Submit", class: "btn btn-primary" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

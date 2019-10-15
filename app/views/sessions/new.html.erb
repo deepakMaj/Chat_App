@@ -1,7 +1,7 @@
 <h2 align="center">Welcome to MessageMe-<i>ChatApp</i></h2>
 
 <div class="login-form">
-    <%= form_for(:session, html: {role: "form"}, url: login_path) do |f|%>
+    <%= form_for(:session, html: {role: "form", autocomplete: "off"}, url: login_path) do |f|%>
 		<div class="avatar"><%= image_tag("login.ico", class: "change")%></div>
     	<h4 class="modal-title">Login to Your Account</h4>
         <div class="form-group">
