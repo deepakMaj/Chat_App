@@ -2,10 +2,6 @@
 @import "bootstrap";
 @import "font-awesome";
 
-.center{
-  margin-top: 8px;
-  margin-left: 15px;
-}
 
 .size{
   width: 80px;
@@ -40,12 +36,6 @@
   height: 380px;
 }
 
-.jumbotron{
-  background-image: asset-url('images.jpg');
-  background-size: cover;
-  height: 550px;
-}
-
 .cen{
   margin-top: 120px;
   margin-left: 350px;
@@ -78,4 +68,22 @@ footer ul li{
 
 #messages{
   overflow: auto;
+}
+
+.center{
+  text-align: center;
+}
+
+.jumbotron{
+  background-image: asset-url('images.jpg');
+  background-size: cover;
+  height: 550px;
+}
+
+.jumbotron h1{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  letter-spacing: -1px;
+  font-weight: bold;
 }
