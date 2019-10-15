@@ -8,19 +8,19 @@
 <div class="row">
 <div class="col-md-9">
   <div class="panel panel-default colm">
-    <div class="panel-body coln">
-      <section>
+    <div class="panel-body coln" id="messages">
+      <section id="message-container">
         <%= render @messages %>
       </section>
     </div>
     <div class="panel-footer">
+      <%= form_for(@message, html: {role: "form", class: "form-horizontal"}, url: message_path, remote: true) do |f|%>
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Enter message...">
+          <%= f.text_field :body, placeholder: "Enter message...", class: "form-control"%>
         <span class="input-group-btn">
-          <button type="button" class="btn btn-primary">
-            <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
-          </button>
+          <%= f.button '<span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>'.html_safe, class: "btn btn-primary" %>
         </span>
+        <% end %>
       </div>
     </div>
    </div>
@@ -28,9 +28,10 @@
   <div class="col-md-3">
    <div class="well col">
     <ul class="nav nav-pills nav-stacked">
-      <li role="presentation" class="active"><a href="#">Home</a></li>
-      <li role="presentation"><a href="#">Mesages</a></li>
-      <li role="presentation"><a href="#">Friends</a></li>
+      <li role="presentation" class="active"><%= link_to "Home", index_path %></li>
+      <li role="presentation"><%= link_to "Messages", index_path%></li>
+      <li role="presentation"><%= link_to "Logout", logout_path, method: :delete %></li>
+      <li role="presentation"><a href="https://github.com/deepakMaj">About</a></li>
     </ul>
    </div>
   </div>
